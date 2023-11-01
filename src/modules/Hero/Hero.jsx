@@ -1,5 +1,8 @@
-import styles from './Hero.module.css';
+import { Link } from 'react-router-dom';
+
 import Button from '../../components/ui/Button';
+
+import styles from './Hero.module.css';
 
 const Hero = () => {
   return (
@@ -9,7 +12,9 @@ const Hero = () => {
         <p className={styles.subtitle}>
           Explore the open road with our premium rental cars.
         </p>
-        <Button>See cars</Button>
+        <Button as={Link} to="/catalog">
+          See cars
+        </Button>
       </div>
     </section>
   );

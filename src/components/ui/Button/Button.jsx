@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
 import styles from './Button.module.css';
 
-const Button = ({ children }) => {
-  return <button className={styles.btn}>{children}</button>;
+const Button = ({ as: As = 'button', ...props }) => {
+  return <As className={styles.btn} {...props} />;
 };
 
 Button.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  as: PropTypes.elementType,
 };
 
 export default Button;
