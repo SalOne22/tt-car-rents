@@ -1,0 +1,36 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-image: linear-gradient(
+      95deg,
+      hsl(var(--color-smoke) / 0.2),
+      hsl(var(--color-smoke) / 0.2) 20%,
+      hsl(var(--color-blue) / 0.2)
+    ),
+    linear-gradient(
+      40deg,
+      hsl(var(--color-smoke) / 0.95),
+      hsl(var(--color-smoke) / 0.95) 20%,
+      hsl(var(--color-blue) / 0.2)
+    );
+  padding: 120px 0;
+  height: 100dvh;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1.1;
+
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 600;
+
+  color: hsl(var(--color-gray));
+
+  margin-bottom: 20px;
+}

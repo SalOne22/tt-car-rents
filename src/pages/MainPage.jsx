@@ -1,5 +1,11 @@
+import Hero from '../modules/Hero/index.js';
+
 const MainPage = () => {
-  return <div>Main Page</div>;
+  return (
+    <div>
+      <Hero />
+    </div>
+  );
 };
 
 export default MainPage;
