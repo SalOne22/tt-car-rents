@@ -1,0 +1,18 @@
+.btn {
+  border: none;
+  border-radius: 12px;
+  background-color: hsl(var(--color-blue));
+  color: hsl(var(--color-white));
+  cursor: pointer;
+  padding: 12px 50px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.42857;
+
+  transition: background-color var(--transition-default);
+}
+
+.btn:focus-visible,
+.btn:hover {
+  background-color: hsl(var(--color-blue-darker));
+}

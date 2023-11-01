@@ -13,6 +13,10 @@
 
   /* Colors Brand */
   --color-blue: 222 100% 60%;
+  --color-blue-darker: 222 90% 42%;
+
+  /* Transitions */
+  --transition-default: 250ms ease;
 }
 
 body {
