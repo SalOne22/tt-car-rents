@@ -1,0 +1,20 @@
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
+:root {
+  /* Colors Light */
+  --color-white: 0 0% 100%;
+  --color-ghost: 240 33% 98%;
+  --color-smoke: 60 4% 95%;
+  --color-gray: 60 0% 54%;
+
+  /* Colors Dark */
+  --color-black: 216 12% 8%;
+
+  /* Colors Brand */
+  --color-blue: 222 100% 60%;
+}
+
+body {
+  background-color: hsl(var(--color-white));
+  color: hsl(var(--color-black));
+}
