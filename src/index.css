@@ -18,6 +18,9 @@
   /* Transitions */
   --transition-default: 250ms ease;
   --transition-short: 100ms ease-in;
+
+  /* Z indexes */
+  --z-header: 5;
 }
 
 body {
