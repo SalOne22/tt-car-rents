@@ -1,0 +1,25 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px 29px;
+  justify-items: center;
+  margin-bottom: 100px;
+}
+
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.load-more-btn {
+  color: hsl(var(--color-blue));
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: currentColor underline;
+  transition: color var(--transition-default);
+}
+
+.load-more-btn:focus-visible,
+.load-more-btn:hover {
+  color: hsl(var(--color-blue-darker));
+}
