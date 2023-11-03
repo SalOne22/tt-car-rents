@@ -7,13 +7,13 @@ import {
 } from '../redux/slices/adverts/advertsOperations.js';
 import ScreenLoader from '../components/ScreenLoader.jsx';
 import { useEffect } from 'react';
-import { useFavorite } from '../redux/slices/favorites/favoritesSelectors.js';
+import { useFavorites } from '../redux/slices/favorites/favoritesSelectors.js';
 import { add, remove } from '../redux/slices/favorites/favoritesSlice.js';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const { adverts, error, canLoadMore } = useAdverts();
-  const { favoriteIds } = useFavorite();
+  const { favoriteIds } = useFavorites();
 
   useEffect(() => {
     dispatch(getFirstAdverts());
