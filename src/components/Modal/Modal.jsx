@@ -13,7 +13,7 @@ const Modal = ({ className, onClose, children }) => {
 
     window.addEventListener('keyup', eventHandler);
     return () => window.removeEventListener('keyup', eventHandler);
-  }, []);
+  }, [onClose]);
 
   useEffect(() => {
     let bodyEl = document.getElementsByTagName('body')[0];
