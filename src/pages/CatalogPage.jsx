@@ -43,7 +43,14 @@ const CatalogPage = () => {
     }
   };
 
-  if (error) return <div>Something went wrong...</div>;
+  if (error)
+    return (
+      <div>
+        <section className="section">
+          <p>Something went wrong...</p>
+        </section>
+      </div>
+    );
 
   if (filteredAdverts)
     return (
