@@ -19,6 +19,10 @@ const CatalogPage = () => {
     dispatch(getFirstAdverts());
   }, [dispatch]);
 
+  const handleFilters = (data) => {
+    console.log(data);
+  };
+
   const handleFavoriteChange = (id, favorite) => {
     if (favorite) {
       dispatch(add(adverts.find((advert) => advert.id === id)));
@@ -40,6 +44,7 @@ const CatalogPage = () => {
               canLoadMore={canLoadMore}
               favoritesIds={favoriteIds}
               onFavorite={handleFavoriteChange}
+              onFiltersChange={handleFilters}
             />
           </div>
         </section>

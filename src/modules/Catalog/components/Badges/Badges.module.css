@@ -1,0 +1,28 @@
+.badges {
+  color: hsl(var(--color-black) / 0.5);
+  word-spacing: 6px;
+}
+
+.badges + .badges {
+  margin-top: 4px;
+}
+
+.badges > span {
+  word-spacing: initial;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.badges > span:not(:last-child) {
+  margin-right: 6px;
+}
+
+.badges > span:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  margin-left: 6px;
+  height: 16px;
+  border-right: 1px solid hsl(var(--color-black) / 0.1);
+  transform: translateY(25%);
+}

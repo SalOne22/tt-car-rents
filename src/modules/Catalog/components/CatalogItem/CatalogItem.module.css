@@ -75,27 +75,7 @@
 }
 
 .badges {
-  display: flex;
-  column-gap: 6px;
-  flex-wrap: wrap;
-
-  color: hsl(var(--color-black) / 0.5);
   margin-bottom: 28px;
-}
-
-.badges > span {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 6px;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.badges > span:not(:last-child)::after {
-  content: '';
-  display: inline-block;
-  height: 16px;
-  border-right: 1px solid hsl(var(--color-black) / 0.1);
 }
 
 .item > button {

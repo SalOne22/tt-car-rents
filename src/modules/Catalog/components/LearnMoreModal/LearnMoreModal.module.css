@@ -1,0 +1,67 @@
+.modal {
+  width: 541px;
+}
+
+.img {
+  width: 100%;
+  height: 248px;
+  border-radius: 14px;
+  object-fit: cover;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33333;
+  margin-bottom: 8px;
+}
+
+.title .accent {
+  color: hsl(var(--color-blue));
+}
+
+.badges {
+  margin-bottom: 14px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.42857;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 1.42857;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.accessories {
+  margin-bottom: 24px;
+}
+
+.rental-conditions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  color: hsl(var(--color-jet));
+  letter-spacing: -0.24px;
+  line-height: 1.5;
+}
+
+.rental-conditions > li {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 35px;
+  background-color: hsl(var(--color-seasalt));
+}
+
+.rental-conditions span:not(:first-child) {
+  color: hsl(var(--color-blue));
+  font-weight: 600;
+}

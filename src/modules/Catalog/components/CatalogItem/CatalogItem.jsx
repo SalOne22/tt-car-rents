@@ -2,9 +2,12 @@ import PropTypes from 'prop-types';
 import Button from '../../../../components/ui/Button/index.js';
 import HeartIcon from '../../../../assets/icons/heart.svg?react';
 import styles from './CatalogItem.module.css';
-import { useId } from 'react';
+import { useId, useState } from 'react';
+import LearnMoreModal from '../LearnMoreModal';
+import Badges from '../Badges';
 
 const CatalogItem = ({
+  id,
   make,
   model,
   year,
@@ -18,8 +21,11 @@ const CatalogItem = ({
   favorite,
   onFavoriteChange,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const favoriteId = useId();
+
   const [, city, country] = address.split(', ');
+
   return (
     <li className={styles.item}>
       <div className={styles.imgWrapper}>
@@ -50,25 +56,31 @@ const CatalogItem = ({
         </span>
         <span>{rentalPrice}</span>
       </h3>
-      <p className={styles.badges}>
-        {[
-          city,
-          country,
-          rentalCompany,
-          type,
-          make,
-          mileage,
-          functionalities[0],
-        ].map((txt, i) => (
-          <span key={i}>{txt}</span>
-        ))}
-      </p>
-      <Button>Learn more</Button>
+      <Badges
+        className={styles.badges}
+        badges={[
+          [
+            city,
+            country,
+            rentalCompany,
+            type,
+            make,
+            mileage.toLocaleString('en-US'),
+            functionalities[0],
+          ],
+        ]}
+      />
+
+      <Button onClick={() => setIsModalOpen(true)}>Learn more</Button>
+      {isModalOpen && (
+        <LearnMoreModal id={id} onClose={() => setIsModalOpen(false)} />
+      )}
     </li>
   );
 };
 
 CatalogItem.propTypes = {
+  id: PropTypes.string.isRequired,
   make: PropTypes.string.isRequired,
   model: PropTypes.string.isRequired,
   year: PropTypes.number.isRequired,

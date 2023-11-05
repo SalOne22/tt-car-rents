@@ -4,16 +4,19 @@
 :root {
   /* Colors Light */
   --color-white: 0 0% 100%;
+  --color-seasalt: 0 0% 98%;
   --color-ghost: 240 33% 98%;
   --color-smoke: 60 4% 95%;
   --color-gray: 60 0% 54%;
 
   /* Colors Dark */
   --color-black: 216 12% 8%;
+  --color-jet: 0 1% 21%;
 
   /* Colors Brand */
   --color-blue: 222 100% 60%;
   --color-blue-darker: 222 90% 42%;
+  --color-red: 350 100% 60%;
 
   /* Transitions */
   --transition-default: 250ms ease;
@@ -21,12 +24,15 @@
 
   /* Z indexes */
   --z-header: 5;
+  --z-backdrop: 10;
 }
 
 body {
   font-family: Manrope, sans-serif;
   background-color: hsl(var(--color-white));
   color: hsl(var(--color-black));
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 h1,
@@ -62,6 +68,18 @@ button {
   padding: 0;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
 .container {
   padding: 0 128px;
   width: 100%;
@@ -81,4 +99,8 @@ button {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.scroll-lock {
+  overflow: hidden;
 }

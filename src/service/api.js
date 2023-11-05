@@ -12,15 +12,22 @@ class Api {
     this.page = page;
   }
 
-  async fetchAdverts() {
+  async fetchAdverts(filters) {
     const res = await axios.get('/advert', {
       params: {
         page: this.page,
         limit: this.limit,
+        ...filters,
       },
     });
 
     this.page += 1;
+
+    return res.data;
+  }
+
+  async fetchAdvertById(id) {
+    const res = await axios.get(`/advert/${id}`);
 
     return res.data;
   }

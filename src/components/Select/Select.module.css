@@ -1,0 +1,62 @@
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 29px;
+  padding: 14px 18px;
+  background-color: hsl(var(--color-ghost));
+  border-radius: 14px;
+  font-size: 18px;
+  line-height: 1.11111;
+  font-weight: 500;
+}
+
+.icon {
+  height: 20px;
+}
+
+.content {
+  width: var(--radix-select-trigger-width);
+  height: var(--radix-select-content-available-height);
+  max-height: var(--_height);
+  background-color: hsl(var(--color-white));
+  padding: 14px 8px 14px 18px;
+  border-radius: 14px;
+  border: 1px solid hsl(var(--color-black) / 0.05);
+  box-shadow: 0 4px 36px hsl(0 0% 0% / 0.02);
+}
+
+.item {
+  cursor: pointer;
+  color: hsl(var(--color-black) / 0.2);
+  outline: none;
+}
+
+.item:hover,
+.item:focus-visible {
+  color: hsl(var(--color-black));
+}
+
+.item + .item {
+  margin-top: 8px;
+}
+
+.scroll-root {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-viewport {
+  width: 100%;
+  height: 100%;
+}
+
+.scrollbar {
+  padding: 5px 1px;
+  width: 10px;
+}
+
+.scrollbar-thumb {
+  background-color: hsl(var(--color-black) / 0.05);
+  border-radius: 10px;
+}
