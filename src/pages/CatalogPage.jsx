@@ -6,21 +6,33 @@ import {
   getMoreAdverts,
 } from '../redux/slices/adverts/advertsOperations.js';
 import ScreenLoader from '../components/ScreenLoader.jsx';
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useFavorites } from '../redux/slices/favorites/favoritesSelectors.js';
 import { add, remove } from '../redux/slices/favorites/favoritesSlice.js';
+import api from '../service/api.js';
+import { filterAdverts } from '../helpers/index.js';
 
 const CatalogPage = () => {
+  const [filters, setFilters] = useState({});
   const dispatch = useDispatch();
   const { adverts, error, canLoadMore } = useAdverts();
   const { favoriteIds } = useFavorites();
+
+  // FIXME: Filter currently on client, for proper pagination filter must be on the backend
+  const filteredAdverts = useMemo(() => {
+    return filterAdverts(filters, adverts);
+  }, [adverts, filters]);
 
   useEffect(() => {
     dispatch(getFirstAdverts());
   }, [dispatch]);
 
   const handleFilters = (data) => {
-    console.log(data);
+    setFilters(data);
+    api.setFilters({
+      make: data.make,
+    });
+    dispatch(getFirstAdverts());
   };
 
   const handleFavoriteChange = (id, favorite) => {
@@ -33,13 +45,13 @@ const CatalogPage = () => {
 
   if (error) return <div>Something went wrong...</div>;
 
-  if (adverts)
+  if (filteredAdverts)
     return (
       <div>
         <section className="section">
           <div className="container">
             <Catalog
-              cars={adverts}
+              cars={filteredAdverts}
               onLoadMore={() => dispatch(getMoreAdverts())}
               canLoadMore={canLoadMore}
               favoritesIds={favoriteIds}

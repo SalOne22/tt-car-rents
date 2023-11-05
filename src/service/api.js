@@ -6,18 +6,23 @@ class Api {
   constructor(limit = 12) {
     this.page = 1;
     this.limit = limit;
+    this.filters = {};
   }
 
   setPage(page) {
     this.page = page;
   }
 
-  async fetchAdverts(filters) {
+  setFilters(filters) {
+    this.filters = filters;
+  }
+
+  async fetchAdverts() {
     const res = await axios.get('/advert', {
       params: {
         page: this.page,
         limit: this.limit,
-        ...filters,
+        ...this.filters,
       },
     });
 
