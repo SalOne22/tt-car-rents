@@ -8,12 +8,15 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className="container">
-        <h1 className={styles.title}>Car Rents</h1>
+        <h1 className={styles.title}>Car Rental Services</h1>
         <p className={styles.subtitle}>
-          Explore the open road with our premium rental cars.
+          Explore our diverse fleet of cars and find the perfect one for your
+          needs.
+          <br /> Whether it&apos;s a short trip or a long journey, we&apos;ve
+          got you covered.
         </p>
         <Button as={Link} to="/catalog">
-          See cars
+          View Catalog
         </Button>
       </div>
     </section>

@@ -1,4 +1,5 @@
 .btn {
+  display: inline-block;
   border-radius: 12px;
   background-color: hsl(var(--color-blue));
   color: hsl(var(--color-white));
