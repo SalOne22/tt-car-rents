@@ -7,6 +7,15 @@ import clsx from 'clsx';
 
 const Modal = ({ className, onClose, children }) => {
   useEffect(() => {
+    const eventHandler = (e) => {
+      if (e.keyCode === 27) onClose();
+    };
+
+    window.addEventListener('keyup', eventHandler);
+    return () => window.removeEventListener('keyup', eventHandler);
+  }, []);
+
+  useEffect(() => {
     let bodyEl = document.getElementsByTagName('body')[0];
     bodyEl.classList.add('scroll-lock');
 
