@@ -25,6 +25,7 @@
   /* Z indexes */
   --z-header: 5;
   --z-backdrop: 10;
+  --z-overlay: 15;
 }
 
 body {

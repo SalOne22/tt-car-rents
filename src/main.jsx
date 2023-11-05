@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import ScreenLoader from './components/ScreenLoader.jsx';
+import ScreenLoader from './components/ScreenLoader';
 import App from './App.jsx';
 import { persistor, store } from './redux/store.js';
 

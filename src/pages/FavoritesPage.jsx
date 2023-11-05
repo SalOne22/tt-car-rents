@@ -4,7 +4,7 @@ import { getMoreAdverts } from '../redux/slices/adverts/advertsOperations.js';
 import { add, remove } from '../redux/slices/favorites/favoritesSlice.js';
 import Catalog from '../modules/Catalog/Catalog.jsx';
 import { useMemo, useState } from 'react';
-import ScreenLoader from '../components/ScreenLoader.jsx';
+import ScreenLoader from '../components/ScreenLoader';
 import { filterAdverts } from '../helpers/index.js';
 
 const FavoritesPage = () => {

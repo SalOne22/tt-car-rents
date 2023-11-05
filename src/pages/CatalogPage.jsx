@@ -5,7 +5,7 @@ import {
   getFirstAdverts,
   getMoreAdverts,
 } from '../redux/slices/adverts/advertsOperations.js';
-import ScreenLoader from '../components/ScreenLoader.jsx';
+import ScreenLoader from '../components/ScreenLoader';
 import { useEffect, useMemo, useState } from 'react';
 import { useFavorites } from '../redux/slices/favorites/favoritesSelectors.js';
 import { add, remove } from '../redux/slices/favorites/favoritesSlice.js';
@@ -15,7 +15,7 @@ import { filterAdverts } from '../helpers/index.js';
 const CatalogPage = () => {
   const [filters, setFilters] = useState({});
   const dispatch = useDispatch();
-  const { adverts, error, canLoadMore } = useAdverts();
+  const { adverts, error, canLoadMore, loading } = useAdverts();
   const { favoriteIds } = useFavorites();
 
   // FIXME: Filter currently on client, for proper pagination filter must be on the backend
@@ -48,6 +48,7 @@ const CatalogPage = () => {
   if (filteredAdverts)
     return (
       <div>
+        {loading && <ScreenLoader />}
         <section className="section">
           <div className="container">
             <Catalog

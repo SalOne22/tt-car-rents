@@ -5,6 +5,7 @@ import api from '../../../../service/api.js';
 import styles from './LearnMoreModal.module.css';
 import Badges from '../Badges';
 import Button from '../../../../components/ui/Button/index.js';
+import ScreenLoader from '../../../../components/ScreenLoader/index.js';
 
 const LearnMoreModal = ({ id, onClose }) => {
   const [advert, setAdvert] = useState(null);
@@ -15,7 +16,7 @@ const LearnMoreModal = ({ id, onClose }) => {
     })();
   }, [id]);
 
-  if (!advert) return <Modal onClose={onClose}>Loading...</Modal>;
+  if (!advert) return <ScreenLoader />;
 
   const {
     img,

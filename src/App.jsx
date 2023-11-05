@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Layout from './components/Layout.jsx';
-import ScreenLoader from './components/ScreenLoader.jsx';
+import ScreenLoader from './components/ScreenLoader';
 
 const MainPage = lazy(() => import('./pages/MainPage.jsx'));
 const CatalogPage = lazy(() => import('./pages/CatalogPage.jsx'));
